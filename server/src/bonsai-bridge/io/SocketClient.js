@@ -10,7 +10,13 @@ var mapping = {
     "Session:register": "client.user.register",
     "Session:login" : "client.session.login",
     "Session:loginToken": "client.session.login-token",
-    "Session:logout": "client.session.logout"
+    "Session:logout": "client.session.logout",
+    // New stuff isn't legacy, we'll have to white-list operations
+    // That can be called from the socket, for now this will
+    // serve that purpose.
+    "client.room.create": "client.room.create",
+    "client.room.details": "client.room.details",
+    "client.room.remove": "client.room.remove"
 };
 
 function mapEvent(event) {

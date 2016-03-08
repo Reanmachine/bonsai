@@ -54,6 +54,13 @@ export function handleDefaultRejections() {
 
 export const debug = function() { console.log(...arguments); }; // TODO: When debug() works?
 
+export function makeSuccess(data) {
+    return {
+        success: true,
+        ...data
+    };
+}
+
 export function makeFailure(message) {
     return {
         success: false,

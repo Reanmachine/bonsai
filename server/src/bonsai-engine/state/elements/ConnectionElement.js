@@ -4,6 +4,9 @@ import * as connectionActions   from "../actions/connections";
 import TrackedElement           from "../TrackedElement";
 
 function findInState(state, id) {
+
+    console.log("Find In State: ", state, id);
+
     return state.connections[id] || {
             id: id,
             session: null,

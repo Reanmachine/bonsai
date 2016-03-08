@@ -41,7 +41,7 @@ export const crashReporter = store => next => action => {
 
 function apiMiddlewareCall(context, action) {
     let { api } = context;
-    
+
     let {
         module,
         method,

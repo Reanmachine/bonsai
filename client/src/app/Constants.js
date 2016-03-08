@@ -15,6 +15,11 @@ export const Api = {
         LOGIN_TOKEN: "Session:loginToken",
         REGISTER: "Session:register",
         LOGOUT: "Session:logout"
+    },
+    Room: {
+        CREATE: "client.room.create",
+        DETAILS: "client.room.details",
+        REMOVE: "client.room.remove"
     }
 };
 
