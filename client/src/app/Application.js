@@ -61,9 +61,9 @@ export default class Application extends React.Component {
             reducer,
             applyMiddleware(
                 crashReporter,
-                logger,
                 createApiMiddleware(this.api),
-                thunk
+                thunk,
+                logger
             )
         );
     }
@@ -78,7 +78,7 @@ export default class Application extends React.Component {
     render() {
         return (
             <Provider store={this.store}>
-                {Routes}
+                {Routes()}
             </Provider>
         );
     }

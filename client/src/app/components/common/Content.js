@@ -23,7 +23,7 @@ class Content extends React.Component {
                             <li><Link to="/songs">Song Index</Link></li>
                             <li><Link to="/songs/345">Song Details</Link></li>
                             <li><Link to="/rooms">Room Index</Link></li>
-                            <li><Link to="/rooms/345">Room Details</Link></li>
+                            <li><Link to="/rooms/test-room">Room Details</Link></li>
                             <li><Link to="/users">User Index</Link></li>
                             <li><Link to="/users/profile">User Profiles</Link></li>
                             <li><Link to="/users/345">User Details</Link></li>

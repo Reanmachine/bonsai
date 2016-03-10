@@ -1,20 +1,59 @@
-import React from "react";
-import { connect } from "react-redux";
+// Deps
+import React                        from "react";
+import { bindActionCreators }       from "redux";
+import { connect }                  from "react-redux";
 
-const Details = (props) => (
-    <div>
+// General
+import {
+    decodeIdentifier
+}                           from "../../Utilities";
 
-        <h2>Details Page</h2>
+// Actions
+import * as ActionsRoom     from "../../actions/room";
 
-        <p>
-            This is the provided room's profile.
-        </p>
+// Components
+import DetailsPage          from "../../components/pages/DetailsPage";
+import RoomDetailsView      from "../../components/sections/rooms/RoomDetailsView";
 
-        {/* TODO: Include room Detail Components */}
+const Details = (props) => {
 
-    </div>
-);
+    // TODO: Wrap this up for re-use
+    let slug = props.params.roomSlug;
+    let id = props.params.roomEncodedId;
+
+    let identifier = slug
+        ? slug
+        : decodeIdentifier(id);
+
+    let room = slug
+        ? props.rooms.find(x => x.slug === identifier)
+        : props.rooms.find(x => x.id === identifier);
+
+    return (
+        <DetailsPage
+            dispatch={props.dispatch}
+            identifier={identifier}
+            onLoadData={props.actions.apiUpdateRoom}>
+
+            <RoomDetailsView room={room} isLoading={props.loading[identifier]} />
+
+        </DetailsPage>
+    );
+};
+
+const mapStateToProps = store => ({
+    rooms: store.room.collection,
+    loading: store.room.loading
+});
+
+const mapDispatchToProps = dispatch => ({
+    dispatch: dispatch,
+    actions: bindActionCreators({
+        apiUpdateRoom: ActionsRoom.apiUpdateRoom,
+    }, dispatch)
+});
 
 export default connect(
-    // TODO
+    mapStateToProps,
+    mapDispatchToProps
 )(Details);

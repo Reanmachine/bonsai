@@ -64,7 +64,7 @@ export default class RoomApiModule extends ApiModule {
         return this.send(
             Api.Room.DETAILS,
             {
-                identifier
+                identifier,
             }
         );
     }

@@ -11,6 +11,7 @@
   "dependencies": {
     "alt": "^0.17.3",
     "backbone": "^1.2.3",
+    "base-x": "^1.0.3",
     "classnames": "^2.2.3",
     "history": "^1.17.0",
     "jquery": "^2.2.0",

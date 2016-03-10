@@ -28,6 +28,9 @@ export const Action = {
         CALL: "ACTION::API::CALL",
         CALLBACK: "ACTION::API:CALLBACK"
     },
+    Common: {
+        UPDATE_LOADING: "ACTION::COMMON::UPDATE_LOADING"
+    },
     Player: {
         PLAY: "ACTION::PLAYER::PLAY",
         PAUSE: "ACTION::PLAYER::PAUSE",
@@ -39,6 +42,11 @@ export const Action = {
     },
     Queue: {
         PLAY_SONG: "ACTION::QUEUE::PLAY_SONG"
+    },
+    Room: {
+        ADD: "ACTION::ROOM::ADD",
+        UPDATE: "ACTION::ROOM::UPDATE",
+        REMOVE: "ACTION::ROOM::REMOVE"
     },
     Session: {
         UPDATE_SESSION: "ACTION::SESSION::UPDATE_SESSION",

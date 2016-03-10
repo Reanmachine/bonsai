@@ -48,3 +48,19 @@ export function apiCallback(
         callback
     };
 }
+
+/**
+ * Set the loading status for an entity.
+ *
+ * @param entity The entity type that's loading.
+ * @param key The key that's loading.
+ * @param isLoading The loading status.
+ */
+export function updateLoading(entity, key, isLoading) {
+    return {
+        type: Action.Common.UPDATE_LOADING,
+        entity,
+        key,
+        isLoading
+    };
+}
